@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular8-springboot-client"
+    }
+  },
+  "defaultProject": "angular8-springboot-client",
+  "cli": {
+    "analytics": "b4e3a789-04a1-4f64-a661-97e5e6f0ea14"
+  }
 }
