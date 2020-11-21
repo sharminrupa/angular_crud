@@ -12,19 +12,21 @@ import { EmployeeService } from '../service/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  empliyees:Observable<Employee[]>
+  empliyees: Observable<Employee[]>;
 
   constructor(private employeeService: EmployeeService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.reloadData();
   }
 
+  // tslint:disable-next-line:typedef
   reloadData(){
-    this.empliyees = this.employeeService.getEmployeesList();
+    this.empliyees = this.employeeService.getEmployeeList();
   }
 
+  // tslint:disable-next-line:typedef
   deleteEmployee(id: number){
     this.employeeService.deleteEmployee(id)
     .subscribe(
@@ -32,9 +34,10 @@ export class EmployeeListComponent implements OnInit {
         console.log(data);
         this.reloadData();
       },
-      error => console.log(error)); 
+      error => console.log(error));
     }
 
+    // tslint:disable-next-line:typedef
     employeeDetails(id: number){
       this.router.navigate(['details', id]);
     }
